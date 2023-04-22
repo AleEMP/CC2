@@ -1,40 +1,25 @@
 
 #include <iostream>
 #include "Colaclass.h"
-int main()
-{
+int main(){
+
     Cola awa;
+    for (int i = 1; i <= 10; i++) {
+        awa.push(i);
+    }
     awa.imprimir();
-    awa.push(8);
-    awa.push(5);
-    awa.push(55);
-    awa.push(35);
-    awa.push(53);
-    awa.push(50);
-    awa.push(5);
+    for (int i = 1; i <= 3; i++) {
+        cout << awa.pop() << endl;
+    }
     awa.imprimir();
-    awa.pop();
-    awa.pop();
-    awa.pop();
+    for (int i = 1; i <= 2; i++) {
+        awa.push(11);
+    }
     awa.imprimir();
-    awa.push(3);
-    awa.push(55);
-    awa.push(35);
-    awa.push(53);
-    awa.push(50);
+    for (int i = 1; i <= 9; i++) {
+        cout << awa.pop() << endl;
+    }
     awa.imprimir();
-    awa.push(40);
-    awa.imprimir();
-    awa.push(3);
-    awa.imprimir();
-    awa.pop();
-    awa.imprimir();
-    awa.push(16);
-    awa.imprimir();
-    awa.push(1);
-    awa.imprimir();
-    awa.pop();
-    awa.imprimir();
-    awa.push(1);
+    awa.push(2);
     awa.imprimir();
 }

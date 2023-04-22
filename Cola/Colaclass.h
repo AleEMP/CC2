@@ -8,41 +8,56 @@ class Cola{
 	int* head = nullptr;
 	int* tail = nullptr;
 public:
-	void pop();
+	int pop();
 	void push(int);
 	void imprimir();
 };
-void Cola::pop() {
+int Cola::pop() {
+	int temp;
 	if (!tail) {
-		cout << "La cola está vacia";
+		cout << "La cola está vacia"<<endl;
 	}
 	else {
-		*head = 0;//solo pa ver que la head se mueve ugu
+		if (head == fin) {
+			head = inicio;
+			cout << "Entra uwu" << endl;
+		}
+		temp= *head;
+		if (head+1 == tail or (head == fin and tail == inicio)) { //UWU LISTO :3
+			tail= nullptr;
+			cout << "head rebaso tail,La cola se vacio" << endl;
+		}
+		//cout << head << endl; //direccion de memoria uwu
+		*head = 0;
 		head++;
-		
 	}
+	return temp;
 }
 
 void Cola::push(int n) {
-	
+	if (tail == fin) {
+		tail = inicio;
+	}
 	if (head == tail and head) {
 		cout << "La cola esta llena" << endl;
+		if (head == inicio) {
+			tail = fin - 1;
+		}
 		tail--;
 	}	
 	else {
-		if (!head){
+		if (!head or !tail){
 				head = inicio;
 				tail = inicio;
+				cout << "inicializando" << endl;
 			}
-		else{
-			if (tail == fin) {
-					tail = inicio;
-			}
-		}	
 		*tail = n;
 	}
 	tail++;
-}
+	//cout << tail << endl;//direccion de memoria uwu
+	cout << "tail esta en uno mas que= " << *tail << endl;
+	
+}	
 void Cola::imprimir() {
 	int* temp = lista;
 	cout << "[";
@@ -50,4 +65,5 @@ void Cola::imprimir() {
 		cout << *temp<<",";
 	}
 	cout << "]" << endl;
+	//cout << "Inicio"<<lista << endl;
 }
